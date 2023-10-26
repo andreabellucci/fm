@@ -28,10 +28,10 @@
         <a-scene physics="gravity: 0; debug: false; driver: local;">
             <!-- Assets -->
             <a-assets>
-                <!-- <a-asset-item id="western-gltf" src="assets/models/scenes/western/scene.gltf"></a-asset-item>
+                <a-asset-item id="western-gltf" src="assets/models/scenes/western/scene.gltf"></a-asset-item>
                 <a-asset-item id="mushroom-gltf" src="assets/models/mushroom.glb"></a-asset-item>
                 <a-asset-item id="plant-gltf" src="assets/models/plant_gltf/scene.gltf"></a-asset-item>
-                <a-asset-item id="sword-gltf" src="assets/models/sword/sword.glb"></a-asset-item> -->
+                <a-asset-item id="sword-gltf" src="assets/models/sword/sword.glb"></a-asset-item>
 
                 <!-- Scene #1-->
                 <!-- Stage -->
@@ -41,35 +41,38 @@
                 <a-asset-item id="singer-glb" src="assets/models/performers/singer.glb"></a-asset-item>
                 <a-asset-item id="guitarist-glb" src="assets/models/performers/guitarist.glb"></a-asset-item>
                 <a-asset-item id="drummer-glb" src="assets/models/performers/drummer.glb"></a-asset-item>
-
+-->
                 <a-asset-item id="gift-gltf" src="assets/models/gift/gift.glb"></a-asset-item>
                 <a-asset-item id="gift-obj" src="assets/models/gift/gift.obj"></a-asset-item>
                 <a-asset-item id="room-gltf" src="assets/models/big_room/scene.gltf"></a-asset-item>
-
+                
                 <!-- Lights -->
+                
                 <a-asset-item id="light-01-glb" src="assets/models/lights/light-01.glb"></a-asset-item>
                 <a-asset-item id="light-01-obj" src="assets/models/lights/light-01.obj"></a-asset-item>
                 <a-asset-item id="light-02-obj" src="assets/models/lights/02_stage_light/light_02.obj"></a-asset-item>
                 <a-asset-item id="light-02-mtl" src="assets/models/lights/02_stage_light/light_02.mtl"></a-asset-item>
-
+              
                 <!-- Speakers -->
+                
                 <a-asset-item id="speaker-shell-obj" src="assets/models/speakers/01_speaker/speaker_shell.obj"></a-asset-item>
                 <a-asset-item id="speaker-plane-obj" src="assets/models/speakers/01_speaker/speaker_plane.obj"></a-asset-item>
                 <img id="speaker-abledo" src="assets/models/speakers/01_speaker/textures/Speaker_Abledo.png">
                 <img id="speaker-normal" src="assets/models/speakers/01_speaker/textures/Speaker_Normals.png">
                 <img id="grille-abledo" src="assets/models/speakers/01_speaker/textures/Grille_Abledo.png">
                 <img id="grille-normal" src="assets/models/speakers/01_speaker/textures/Grille_Normals.png">
-
+                
+                
                 <!-- Scene #3 -->
                 <a-asset-item id="cruise-gltf" src="assets/models/sky_cruiser/scene.gltf"></a-asset-item>
                 <a-asset-item id="platform-gltf" src="assets/models/sci-fi_platforms/scene.gltf"></a-asset-item>
                 <a-asset-item id="processor-obj" src="assets/models/processor/processor.obj"></a-asset-item>
-
+                
                 <!-- Models -->
                 <a-asset-item id="gun-obj" src="assets/models/pistol/gun.obj"></a-asset-item>
                 <a-asset-item id="gun-gltf" src="assets/models/pistol/gun.glb"></a-asset-item>
 
-                <!-- <img id='skybox-universe' src="assets/images/universe.png" crossorigin="anonymous"> -->
+                <!--<img id='skybox-universe' src="assets/images/universe.png" crossorigin="anonymous">-->
                 <img id='hue-cursor' src="assets/images/huecursor.png" crossorigin="anonymous">
 
                 <!-- Icons -->
@@ -119,10 +122,9 @@
                 <a-entity id="head" camera look-controls></a-entity>
 
                 <!-- Controllers. -->
-
-                <!-- haptics -->
-                <a-entity id="rightHand"  laser-controls="hand: right" controller-material
-                thumb-controls="hand: right" raycaster="objects: .movable, .ui, .line, .canvasObj, .connectable, .Arrow, .Switch, .Slider;"
+                <!--  -->
+                <a-entity id="rightHand" laser-controls="hand: right" thumb-controls="hand: right" controller-material haptics
+                 raycaster="objects: .movable, .ui, .line, .canvasObj, .connectable, .Arrow, .Switch, .Slider;"
                 absorb-controller right-trigger-listener right-grip-listener right-abutton-listener right-bbutton-listener scale-controller="hand: right" rotation-controller="hand: right">
                     <a-entity id="rightTooltips" class="oculus-tooltips" visible="true">
                         <a-entity id="non-grabbing-tips" visible="true">
@@ -151,8 +153,7 @@
                     </a-entity>
                 </a-entity>
 
-                <!-- haptics -->
-                <a-entity id="leftHand"  oculus-touch-controls="hand: left" controller-material 
+                <a-entity id="leftHand"  oculus-touch-controls="hand: left" controller-material haptics
                 thumb-controls="hand: left" camera-rotation teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: ybutton">
                     <a-entity id="menu" palette-menu>
                         <a-entity id="palette-keyboard" palette-keyboard></a-entity>
@@ -179,38 +180,8 @@
             
             <!-- Floor -->
             <a-plane id="floor" static-body position="0 -1.7 0" rotation="-90 0 0" width=100 height=100 material="transparent: true; opacity: 0"></a-plane>
-
-            <!-- Scene #1 -->
-            <!--
-            <a-entity id="env" environment="preset: default; lighting: none; ground: none; fog: 0"></a-entity>
-            <a-entity light="color: #ffffff; groundColor: #79a8bb; intensity: 0.6; type: hemisphere"></a-entity>
-            <a-entity light="type: directional; color: #ffffff; intensity: 0.15;" position="31 80 50"></a-entity>
-            <a-entity id="stage" position="0 -0.2 -10" scale="0.8 0.8 0.8" obj-model="obj: #stage-obj; mtl: #stage-mtl" mtl-lighting></a-entity>
-            <a-entity id="city"  position="0 0 -10" gltf-model="#city-gltf" mtl-lighting></a-entity>
-            <a-entity id="singer"  position="0 1.7 -5" scale="2.5 2.5 2.5" gltf-model="#singer-glb"></a-entity>
-            <a-entity id="guitarist"  position="-3.5 1.25 -7" scale="2.5 2.5 2.5" gltf-model="#guitarist-glb"></a-entity>
-            <a-entity id="drummer"  position="3.5 1.4 -8" scale="2.5 2.5 2.5" gltf-model="#drummer-glb"></a-entity>
-            -->
-            <!-- Scene #2 -->
-            <!-- <a-entity id="env" environment="preset: default; lighting: none; ground: none; fog: 0"></a-entity>
-            <a-entity light="color: #ffffff; groundColor: #79a8bb; intensity: 0.6; type: hemisphere"></a-entity>
-            <a-entity light="type: directional; color: #ffffff; intensity: 0.15;" position="31 80 50"></a-entity>
-            <a-entity id="room" scale="0.05 0.05 0.05" position="-30 0 20" gltf-model="#room-gltf"></a-entity> -->
-            <!-- <a-entity id="env" environment="preset: default; ground: none; lighting: none"></a-entity>
-            <a-entity id="western" gltf-model="#western-gltf"></a-entity> 
-            <a-entity id="mushroom" class="movable" scale="0.1 0.1 0.1" position="0 -1.22 0" gltf-model="#mushroom-gltf"></a-entity>
-            <a-entity id="plant" event-receiver scale="0.001 0.001 0.001" body="type: static; shape: none" shape__main="shape: cylinder; height: 1600; radiusTop: 80; radiusBottom: 80; offset: -500 300 0" physics-collider="ignoreSleep: true" collision-filter="collisionForces: false" position="0 -0.5 -3" attribute-list="attrNames: Collider, Idle, Spit, Dying" gltf-model="#plant-gltf" animation-mixer="clip: Idle"></a-entity> 
-            <a-entity id="sword" event-receiver class="movable weapon sword" body="type: static; shape: none" shape__main="shape: cylinder; height: 10; radiusTop: 1; radiusBottom: 1; orientation: 0 0 -0.3 1" physics-collider="ignoreSleep: true" collision-filter="collisionForces: false" scale="0.1 0.1 0.1" position="0 0 -2" attribute-list="attrNames: Collider" gltf-model="#sword-gltf"></a-entity> -->          
-
-            <!-- Scene #3 -->
-            <!-- <a-entity light="color: #ffffff; groundColor: #79a8bb; intensity: 0.8; type: hemisphere"></a-entity>
-            <a-entity light="type: directional; color: #ffffff; intensity: 0.4;" position="31 80 -50"></a-entity>
-            <a-entity id="skybox" cubemap="ext:png; folder: /assets/images/blue/"></a-entity>
-            <a-entity id="cruise" scale="15 15 15" gltf-model="#cruise-gltf" mtl-lighting></a-entity>
-            <a-entity id="platform" position="0 0 -10" scale="0.01 0.01 0.01" gltf-model="#platform-gltf" mtl-lighting></a-entity> -->
             
             <!-- Experiment Scene -->
-            
             <a-entity id="env" environment="preset: default; lighting: none; fog: 0" mtl-lighting></a-entity>
             <a-entity light="color: #ffffff; groundColor: #79a8bb; intensity: 0.6; type: hemisphere"></a-entity>
             <a-entity light="type: directional; color: #ffffff; intensity: 0.15;" position="31 80 50"></a-entity>
